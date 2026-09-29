@@ -14,6 +14,8 @@ the live rows.
 | PowerShell in-memory RSA-2048 PEM import | Supported; synthetic key only |
 | Bicep 0.46.1 compilation | Passed |
 | Checkov 3.3.19 Bicep scan | 37 passed, zero failed, 21 documented exceptions |
+| Hosted GitHub CI | [Run 36548338888 passed](https://github.com/xavierxmorris/entra-github-agent-identity-demo/actions/runs/36548338888): broker/client builds, tests, script contracts, Bicep and Checkov |
+| Public source and binary | [Commit 4f74a5f](https://github.com/xavierxmorris/entra-github-agent-identity-demo/commit/4f74a5f05666cebfdbd26e17e41756e785003d73); [immutable release](https://github.com/xavierxmorris/entra-github-agent-identity-demo/releases/tag/demo-4f74a5f05666), GitHub asset digest verified |
 | Azure prerequisite checks | Subscription Owner verified; Linux B1 advertised in approved region; regional usage 0 of 10 |
 | Azure resources | Isolated resource group and federated CI managed identity created; paid compute/storage/vault not deployed |
 | Entra API and public client | Registrations/service principals created; custom role assignment rejected with HTTP 403 `Authorization_RequestDenied` |
@@ -32,3 +34,6 @@ the live rows.
 Only synthetic PR URLs, operation IDs, pass/fail outcomes and sanitised evidence
 should be published. Keep tenant/principal IDs, private repository audit detail,
 deployment state, raw traces and all credentials out of this public register.
+
+Immutable `broker.zip` SHA-256:
+`8ea5b6f246cd75a8c55ef343bdd52b4467c5405ee41f380bf529f60a7cf6d4e3`.

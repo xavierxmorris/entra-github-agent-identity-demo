@@ -1,0 +1,16 @@
+.copilot-azure/
+.azure/
+.env
+.env.*
+!.env.example
+*.pem
+*.pfx
+*.key
+*.p12
+bin/
+obj/
+.local/
+TestResults/
+infra/main.json
+infra/main.parameters.json
+*.zip

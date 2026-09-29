@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src\MaintenanceBroker\MaintenanceBroker.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests\MaintenanceBroker.Tests\MaintenanceBroker.Tests.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <RootNamespace>MaintenanceBroker</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.9" />
+    <PackageReference Include="Azure.Core" Version="1.63.0" />
+    <PackageReference Include="Azure.Data.Tables" Version="12.13.0" />
+    <PackageReference Include="Azure.Storage.Queues" Version="12.27.1" />
+    <PackageReference Include="Azure.Security.KeyVault.Keys" Version="4.10.1" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,27 @@
+name: Sandbox PR policy
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+  pull-requests: read
+jobs:
+  policy:
+    name: sandbox-policy
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verify synthetic change only; never execute PR code
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.number }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $files = @(gh api "repos/$env:REPOSITORY/pulls/$env:PR_NUMBER/files" --paginate --jq '.[].filename')
+          if ($LASTEXITCODE -ne 0) { throw 'Could not inspect changed files.' }
+          if ($files.Count -ne 1 -or $files[0] -cne 'demo/maintenance.json') {
+            throw 'This sandbox accepts only the synthetic maintenance file, not workflow or application changes.'
+          }
+          Write-Output 'Synthetic-only diff confirmed. Human review is still required.'
